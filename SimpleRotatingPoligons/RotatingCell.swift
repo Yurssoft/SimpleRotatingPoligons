@@ -17,18 +17,21 @@ class RotatingCell: UICollectionViewCell {
     weak var delegate: RotatingCellDelegate?
     var cellIndexPath: IndexPath!
     @IBOutlet weak var rotatingButton: UIButton!
+    
     func setupPolygon() {
-        let ss = SimpleRegularPolygon()
+        if let layerToRotate = layerToRotate() {
+            layerToRotate.removeFromSuperlayer()
+        }
+        let simplePolygon = SimpleRegularPolygon()
         do {
-            try ss.setNumber(of: Int.random(in: 3...11))
-            ss.radius = Int(rotatingButton.frame.size.height/4)
+            try simplePolygon.setNumber(of: Int.random(in: 3...11))
+            simplePolygon.radius = Int(rotatingButton.frame.height/4)
             let shapeLayer = CAShapeLayer()
             shapeLayer.name = RotatingCell.layerName
             shapeLayer.frame = rotatingButton.bounds
             shapeLayer.bounds = rotatingButton.frame
             shapeLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-            let viewCenter = CGPoint(x: rotatingButton.frame.midX, y: rotatingButton.frame.midY)
-            shapeLayer.path = ss.calculatePolygon(center: viewCenter)
+            shapeLayer.path = simplePolygon.calculatePolygon(center: rotatingButton.center)
             shapeLayer.lineWidth = 2
             let fillColor = UIColor(red:   randomNumber,
                                     green: randomNumber,
@@ -45,11 +48,17 @@ class RotatingCell: UICollectionViewCell {
             print(error)
         }
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupPolygon()
+    }
+    
     var randomNumber: CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
     
-    func layerToRotate() -> CALayer {
+    func layerToRotate() -> CALayer? {
         if let layerToRotate = rotatingButton.layer.sublayers?.first(where: {
             if let name = $0.name, name == RotatingCell.layerName {
                 return true
@@ -58,10 +67,12 @@ class RotatingCell: UICollectionViewCell {
         }) {
             return layerToRotate
         }
-        return rotatingButton.layer
+        return nil
     }
     
     @IBAction func rotatingButtonPressed(_ sender: Any) {
-        delegate?.didTapRotateButton(layer: layerToRotate(), indexPath: cellIndexPath)
+        if let layerToRotate = layerToRotate() {
+            delegate?.didTapRotateButton(layer: layerToRotate, indexPath: cellIndexPath)
+        }
     }
 }

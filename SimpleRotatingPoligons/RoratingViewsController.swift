@@ -28,14 +28,15 @@ class RoratingViewsController: UIViewController {
     private func createBasicFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let viewWidth = collectionView.frame.width
-        let itemsPerRow: CGFloat = 10
+        let viewHeight = collectionView.frame.height
+        let itemsPerRow: CGFloat = 8
         let widthPerItem = viewWidth/itemsPerRow
-        let itemHeight = widthPerItem
+        let itemHeight = viewHeight/itemsPerRow
         let itemSize = CGSize(width: widthPerItem, height: itemHeight)
         layout.itemSize = itemSize
+        layout.minimumInteritemSpacing = 0
         layout.sectionInset = sectionInsets
         layout.minimumLineSpacing = sectionInsets.left
-        layout.headerReferenceSize = itemSize
         return layout
     }
 }
@@ -65,6 +66,8 @@ extension RoratingViewsController: UICollectionViewDataSource {
             cell.setupPolygon()
             cell.delegate = self
             cell.cellIndexPath = indexPath
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
             return cell
         }
         return UICollectionViewCell()
@@ -82,8 +85,8 @@ extension RoratingViewsController: UICollectionViewDataSource {
     
     private func applyRotation(for indexPath: IndexPath) {
         let cells = collectionView.visibleCells.compactMap({ $0 as? RotatingCell })
-        if let cell = cells.first(where: { $0.cellIndexPath == indexPath}) {
-            applyRotation(layer: cell.layerToRotate())
+        if let cell = cells.first(where: { $0.cellIndexPath == indexPath}), let layerToRotate = cell.layerToRotate() {
+            applyRotation(layer: layerToRotate)
         }
     }
 }
