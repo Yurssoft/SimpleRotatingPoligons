@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1nB-at-ZWX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--STEP 2-->
+        <scene sceneID="20q-4h-Slj">
+            <objects>
+                <viewController id="GKc-qx-EB3" customClass="RoratingViewsController" customModule="SimpleRotatingPoligons" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oli-pe-5tz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gaZ-cH-RNC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dnf-RG-Mx1">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RotatingCell" id="D73-iE-D2Z" customClass="RotatingCell" customModule="SimpleRotatingPoligons" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJC-Ov-Adl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <connections>
+                                                        <action selector="rotatingButtonPressed:" destination="D73-iE-D2Z" eventType="touchUpInside" id="cQQ-Il-8Ih"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="zJC-Ov-Adl" secondAttribute="bottom" id="2Fq-pm-ZMM"/>
+                                            <constraint firstItem="zJC-Ov-Adl" firstAttribute="leading" secondItem="D73-iE-D2Z" secondAttribute="leading" id="Ev9-gM-fiT"/>
+                                            <constraint firstAttribute="trailing" secondItem="zJC-Ov-Adl" secondAttribute="trailing" id="R03-rv-o2D"/>
+                                            <constraint firstItem="zJC-Ov-Adl" firstAttribute="top" secondItem="D73-iE-D2Z" secondAttribute="top" id="Xlk-Eu-Tag"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="rotatingButton" destination="zJC-Ov-Adl" id="xIg-3Y-lrB"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z12-0g-Sat" firstAttribute="bottom" secondItem="gaZ-cH-RNC" secondAttribute="bottom" id="DUC-7H-XJW"/>
+                            <constraint firstItem="gaZ-cH-RNC" firstAttribute="leading" secondItem="z12-0g-Sat" secondAttribute="leading" id="dQl-KF-G9F"/>
+                            <constraint firstItem="gaZ-cH-RNC" firstAttribute="top" secondItem="z12-0g-Sat" secondAttribute="top" id="gha-WY-Lmz"/>
+                            <constraint firstItem="z12-0g-Sat" firstAttribute="trailing" secondItem="gaZ-cH-RNC" secondAttribute="trailing" id="tEK-P1-wvb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z12-0g-Sat"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="STEP 2" id="E37-WU-e8h"/>
+                    <connections>
+                        <outlet property="collectionView" destination="gaZ-cH-RNC" id="xMZ-yS-Gf8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9Q-Mz-JjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="-540"/>
+        </scene>
+        <!--STEP 1-->
+        <scene sceneID="cSo-yF-kZa">
+            <objects>
+                <viewController id="VlH-ml-IJP" customClass="ViewController" customModule="SimpleRotatingPoligons" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="97U-1I-Rco">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7r-P7-bgA">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0Fk-8s-XKY"/>
+                                    <constraint firstAttribute="height" constant="100" id="Ile-GW-yq1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="shapeButtonPressed:" destination="VlH-ml-IJP" eventType="touchUpInside" id="Kbm-TR-lGG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K7r-P7-bgA" firstAttribute="centerX" secondItem="97U-1I-Rco" secondAttribute="centerX" id="FaO-Ek-fmI"/>
+                            <constraint firstItem="K7r-P7-bgA" firstAttribute="centerY" secondItem="97U-1I-Rco" secondAttribute="centerY" id="SlS-eJ-DBw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yeN-yZ-K2T"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="STEP 1" id="DYW-Rx-erJ"/>
+                    <connections>
+                        <outlet property="shapeButton" destination="K7r-P7-bgA" id="hkU-jW-06Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ukx-k2-cMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="-1204"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="a1D-ec-zC4">
+            <objects>
+                <tabBarController id="1nB-at-ZWX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ben-jC-wT4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VlH-ml-IJP" kind="relationship" relationship="viewControllers" id="umk-md-aMY"/>
+                        <segue destination="GKc-qx-EB3" kind="relationship" relationship="viewControllers" id="2v2-6d-ZLh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCC-qL-Lra" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-165" y="-873"/>
+        </scene>
+    </scenes>
+</document>
