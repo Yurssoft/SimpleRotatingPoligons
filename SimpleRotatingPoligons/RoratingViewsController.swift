@@ -83,7 +83,7 @@ extension RoratingViewsController: UICollectionViewDataSource {
     private func applyRotation(for indexPath: IndexPath) {
         let cells = collectionView.visibleCells.compactMap({ $0 as? RotatingCell })
         if let cell = cells.first(where: { $0.cellIndexPath == indexPath}) {
-            applyRotation(layer: cell.contentView.layer)
+            applyRotation(layer: cell.layerToRotate())
         }
     }
 }

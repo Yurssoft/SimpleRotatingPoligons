@@ -13,6 +13,7 @@ protocol RotatingCellDelegate: class {
 }
 
 class RotatingCell: UICollectionViewCell {
+    static let layerName = "LAYERNAME"
     weak var delegate: RotatingCellDelegate?
     var cellIndexPath: IndexPath!
     @IBOutlet weak var rotatingButton: UIButton!
@@ -22,6 +23,10 @@ class RotatingCell: UICollectionViewCell {
             try ss.setNumber(of: Int.random(in: 3...11))
             ss.radius = Int(rotatingButton.frame.size.height/4)
             let shapeLayer = CAShapeLayer()
+            shapeLayer.name = RotatingCell.layerName
+            shapeLayer.frame = rotatingButton.bounds
+            shapeLayer.bounds = rotatingButton.frame
+            shapeLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             let viewCenter = CGPoint(x: rotatingButton.frame.midX, y: rotatingButton.frame.midY)
             shapeLayer.path = ss.calculatePolygon(center: viewCenter)
             shapeLayer.lineWidth = 2
@@ -44,7 +49,19 @@ class RotatingCell: UICollectionViewCell {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
     
+    func layerToRotate() -> CALayer {
+        if let layerToRotate = rotatingButton.layer.sublayers?.first(where: {
+            if let name = $0.name, name == RotatingCell.layerName {
+                return true
+            }
+            return false
+        }) {
+            return layerToRotate
+        }
+        return rotatingButton.layer
+    }
+    
     @IBAction func rotatingButtonPressed(_ sender: Any) {
-        delegate?.didTapRotateButton(layer: contentView.layer, indexPath: cellIndexPath)
+        delegate?.didTapRotateButton(layer: layerToRotate(), indexPath: cellIndexPath)
     }
 }

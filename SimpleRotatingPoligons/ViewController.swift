@@ -24,19 +24,22 @@ class ViewController: UIViewController {
     
     private func increaseSideNumber() {
         let name = "LAYER"
-        view.layer.sublayers?.first(where: { $0.name == name })?.removeFromSuperlayer()
+        shapeButton.layer.sublayers?.first(where: { $0.name == name })?.removeFromSuperlayer()
         sides += 1
         let ss = SimpleRegularPolygon()
         do {
             try ss.setNumber(of: sides)
             ss.radius = 50
             let layer = CAShapeLayer()
+            layer.frame = shapeButton.bounds
+            layer.bounds = shapeButton.frame
+            layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             layer.name = name
-            layer.path = ss.calculatePolygon(center: view.center)
+            layer.path = ss.calculatePolygon(center: shapeButton.center)
             layer.lineWidth = 2
             layer.fillColor = UIColor.white.cgColor
             layer.strokeColor = UIColor.red.cgColor
-            view.layer.addSublayer(layer)
+            shapeButton.layer.addSublayer(layer)
         } catch {
             print(error)
         }
