@@ -12,7 +12,7 @@
         <!--STEP 2-->
         <scene sceneID="20q-4h-Slj">
             <objects>
-                <viewController id="GKc-qx-EB3" customClass="RoratingViewsController" customModule="SimpleRotatingPoligons" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GKc-qx-EB3" customClass="RoratingViewsController" customModule="SimpleRotatingPolygons" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oli-pe-5tz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,6 +1,6 @@
 //
 //  RotatingCell.swift
-//  SimpleRotatingPoligons
+//  SimpleRotatingPolygons
 //
 //  Created by Yurii Boiko on 5/19/19.
 //  Copyright © 2019 yurssoft. All rights reserved.

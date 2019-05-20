@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		509D46E522910E140006C5B5 /* SimpleRotatingPoligons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRotatingPoligons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		509D46E522910E140006C5B5 /* SimpleRotatingPolygons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRotatingPolygons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509D46EA22910E140006C5B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		509D46EF22910E150006C5B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		509D46F222910E150006C5B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		509D46DC22910E140006C5B5 = {
 			isa = PBXGroup;
 			children = (
-				509D46E722910E140006C5B5 /* SimpleRotatingPoligons */,
+				509D46E722910E140006C5B5 /* SimpleRotatingPolygons */,
 				509D46E622910E140006C5B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		509D46E622910E140006C5B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				509D46E522910E140006C5B5 /* SimpleRotatingPoligons.app */,
+				509D46E522910E140006C5B5 /* SimpleRotatingPolygons.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		509D46E722910E140006C5B5 /* SimpleRotatingPoligons */ = {
+		509D46E722910E140006C5B5 /* SimpleRotatingPolygons */ = {
 			isa = PBXGroup;
 			children = (
 				509D46FA22910EA00006C5B5 /* AppDelegate.swift */,
@@ -70,15 +70,15 @@
 				509D46F122910E150006C5B5 /* LaunchScreen.storyboard */,
 				509D46F422910E150006C5B5 /* Info.plist */,
 			);
-			path = SimpleRotatingPoligons;
+			path = SimpleRotatingPolygons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		509D46E422910E140006C5B5 /* SimpleRotatingPoligons */ = {
+		509D46E422910E140006C5B5 /* SimpleRotatingPolygons */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 509D46F722910E150006C5B5 /* Build configuration list for PBXNativeTarget "SimpleRotatingPoligons" */;
+			buildConfigurationList = 509D46F722910E150006C5B5 /* Build configuration list for PBXNativeTarget "SimpleRotatingPolygons" */;
 			buildPhases = (
 				509D46E122910E140006C5B5 /* Sources */,
 				509D46E222910E140006C5B5 /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = SimpleRotatingPoligons;
+			name = SimpleRotatingPolygons;
 			productName = SimpleRotatingPoligons;
-			productReference = 509D46E522910E140006C5B5 /* SimpleRotatingPoligons.app */;
+			productReference = 509D46E522910E140006C5B5 /* SimpleRotatingPolygons.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 509D46E022910E140006C5B5 /* Build configuration list for PBXProject "SimpleRotatingPoligons" */;
+			buildConfigurationList = 509D46E022910E140006C5B5 /* Build configuration list for PBXProject "SimpleRotatingPolygons" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				509D46E422910E140006C5B5 /* SimpleRotatingPoligons */,
+				509D46E422910E140006C5B5 /* SimpleRotatingPolygons */,
 			);
 		};
 /* End PBXProject section */
@@ -287,12 +287,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SimpleRotatingPoligons/Info.plist;
+				INFOPLIST_FILE = SimpleRotatingPolygons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yurrssoft.SimpleRotatingPoligons;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yurrssoft.SimpleRotatingPolygons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,12 +304,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SimpleRotatingPoligons/Info.plist;
+				INFOPLIST_FILE = SimpleRotatingPolygons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yurrssoft.SimpleRotatingPoligons;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yurrssoft.SimpleRotatingPolygons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,7 +319,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		509D46E022910E140006C5B5 /* Build configuration list for PBXProject "SimpleRotatingPoligons" */ = {
+		509D46E022910E140006C5B5 /* Build configuration list for PBXProject "SimpleRotatingPolygons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				509D46F522910E150006C5B5 /* Debug */,
@@ -328,7 +328,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		509D46F722910E150006C5B5 /* Build configuration list for PBXNativeTarget "SimpleRotatingPoligons" */ = {
+		509D46F722910E150006C5B5 /* Build configuration list for PBXNativeTarget "SimpleRotatingPolygons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				509D46F822910E150006C5B5 /* Debug */,
